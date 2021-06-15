@@ -3,6 +3,7 @@
 * Drogon
 * C++20 capable compiler (>= GCC11 or MSVC 19.16)
 * libfmt
+* nlohmann/json
 
 I decide to use Drogon because I'm familare with it and easier to use compared to `libcurl`. Furthermore, it provides C++ coroutine support
 so I don't have to live with callback hell or blocking API

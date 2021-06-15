@@ -122,15 +122,15 @@ int main(int argc, char** argv)
 	bool json = false;
 	std::string user;
 	for(int i=1;i<argc;i++) {
-		std::string arg = argc[i];
+		std::string arg = argv[i];
 		if(arg == "--json")
 			json = true;
 		else if(arg == "-h") {
 			std::cout << "Usage " << argv[0] << " [--json]\n";
 			exit(0);
+		}
 		else
 			user = arg;
-		}
 	}
 	trantor::EventLoopThread thread;
 	thread.run();

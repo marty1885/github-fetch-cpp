@@ -12,6 +12,7 @@ so I don't have to live with callback hell or blocking API
 
 ```
 yay -S drogon-git --noconfirm
+sudo pacman -S fmt nlohmann-json
 ```
 
 ## How to build
@@ -27,6 +28,7 @@ make
 ```
 vcpkg install openssl:x64-windows
 vcpkg install drogon:x64-windows
+vcpkg install nlohmann_json:x64-windows
 vcpkg integrate install
 
 md build

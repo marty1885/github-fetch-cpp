@@ -120,6 +120,7 @@ int main(int argc, char** argv)
 {
 	// HACK: Nasty command line parser
 	bool json = false;
+	std::string user;
 	for(int i=1;i<argc;i++) {
 		std::string arg = argc[i];
 		if(arg == "--json")
@@ -127,10 +128,12 @@ int main(int argc, char** argv)
 		else if(arg == "-h") {
 			std::cout << "Usage " << argv[0] << " [--json]\n";
 			exit(0);
+		else
+			user = arg;
 		}
 	}
 	trantor::EventLoopThread thread;
 	thread.run();
-	sync_wait(print_user_info("https://github.com/x724", thread.getLoop(), false));
+	sync_wait(print_user_info(user, thread.getLoop(), json));
 	// EventLoopThread joins automatically
 }
